@@ -3,6 +3,11 @@ See http://patricklogan.blogspot.com/2011/04/using-sparql-endpoints-and-4store-r
 The code has been used with Steel Bank Common Lisp, but should run
 without issues in many if not most Common Lisp implementations.
 
+Note that all the dependencies can be loaded using quicklisp, except
+for cl-rdfxml. This library can be downloaded from
+http://www.cs.rpi.edu/~tayloj/CL-RDFXML/ and the code here illustrates
+how to inform quicklisp to use this local library.
+
 COPYING
 
 See the file COPYING in this same repository.
