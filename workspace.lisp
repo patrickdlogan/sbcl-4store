@@ -1,7 +1,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; This file is a collection of 'workspace' code for exploring a
-;; 4store RDF knowledgebase using Steel Bank Common Lisp.
+;; 4store RDF knowledgebase using Steel Bank Common Lisp. The code has
+;; been used with Steel Bank Common Lisp, but should run without
+;; issues in many if not most Common Lisp implementations.
 ;; 
 ;; Copyright (c) 2011, Patrick D. Logan
 ;; All rights reserved.

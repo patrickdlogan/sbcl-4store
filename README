@@ -1,5 +1,8 @@
 See http://patricklogan.blogspot.com/2011/04/using-sparql-endpoints-and-4store-rdf.html
 
+The code has been used with Steel Bank Common Lisp, but should run
+without issues in many if not most Common Lisp implementations.
+
 COPYING
 
 See the file COPYING in this same repository.
