@@ -46,6 +46,7 @@
 ;; http://common-lisp.net/project/asdf/asdf/Configuring-ASDF.html
 (push #p"/home/patrick/software/cl-rdfxml/cl-rdfxml_0.9/" asdf:*central-registry*)
 
+(ql:quickload "puri")          ; Working with URIs.
 (ql:quickload "drakma")        ; An HTTP client.
 (ql:quickload "cxml")          ; XML parsing.
 (ql:quickload "fare-matcher")  ; Lisp pattern matching.
@@ -57,6 +58,8 @@
 (use-package 'fare-matcher)
 ;(use-package 'cl-utilities)
 (use-package 'cl-rdfxml)
+(import 'puri::render-uri)
+(import 'puri::uri-p)
 ;(import 'hunchentoot::url-encode)
 ;(import 'hunchentoot::url-decode)
 
@@ -109,11 +112,20 @@
 					      ?prop ?value .                        
                                           }"))))
 
+(defun map-uris-to-strings (list)
+  "Return a copy of the given list with top-level URIs rendered as strings."
+  (mapcar (lambda (x)
+	    (if (uri-p x)
+		(with-output-to-string (stream)
+		  (render-uri x stream))
+	      x)) list))
+
 (defun extract-persons ()
-  "Use cl-rdfxml to parse the RDF/XML of FOAF Persons and related triples. Return the triples as a list of three-lists."
+  "Use cl-rdfxml to parse the RDF/XML of FOAF Persons and related triples. Return the triples as a list of three-lists with URIs rendered as strings."
   (let ((persons '()))
     (parse-document (lambda (s p o)
-		      (push (list s p o) persons))
+		      (push (map-uris-to-strings (list s p o))
+			    persons))
 		    (construct-persons))
     ;; not really necessary to reverse, but it's nice to be in the
     ;; same order as the RDF/XML.
