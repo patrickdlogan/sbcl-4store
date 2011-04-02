@@ -69,7 +69,7 @@
   "This PUTs the data file at the given URL. Equivalalent of: curl -v -T organogram-co-2010-10-31-index.rdf 'http://localhost:8080/data/organogram-co-2010-10-31-index'"
   (http-request "http://localhost:8080/data/organogram-co-2010-10-31-index"
                 :method :put
-                :content (open #p"/home/patrick/dev/4s-sample/organogram-co-2010-10-31-index.rdf" :element-type '(unsigned-byte 8))
+                :content (open #p"/home/patrick/dev/sbcl-4store/organogram-co-2010-10-31-index.rdf" :element-type '(unsigned-byte 8))
                 :content-type "application/rdf+xml" :content-length t))
 
 (defun sparql-server-status ()
