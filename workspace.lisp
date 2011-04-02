@@ -55,7 +55,7 @@
 
 (use-package 'drakma)
 (use-package 'fare-matcher)
-(use-package 'cl-utilities)
+;(use-package 'cl-utilities)
 (use-package 'cl-rdfxml)
 ;(import 'hunchentoot::url-encode)
 ;(import 'hunchentoot::url-decode)
