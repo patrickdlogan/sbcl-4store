@@ -25,11 +25,11 @@
 ;; 4s-httpd  -p 8080 -D sample
 ;;
 ;; -D prevents the http server from daemonizing in order to see
-;; -messages interactively.
+;; messages interactively.
 ;;
 ;; Status of the (empty) KB is now at http://localhost:8080/status/
 ;;
-;; Load the sample data (an RDF/XML file) using curl (here) or a POST
+;; Load the sample data (an RDF/XML file) using curl (here) or a PUT
 ;; from lisp (below):
 ;; curl -v -T organogram-co-2010-10-31-index.rdf 'http://localhost:8080/data/organogram-co-2010-10-31-index'
 ;;
