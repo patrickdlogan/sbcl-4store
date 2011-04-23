@@ -43,13 +43,6 @@
 ;; ruby's gems)
 ;; http://www.quicklisp.org/
 
-;; Quicklisp will be able to load this local library. Make sure the
-;; directory path has a / on the end or it is not recognized as a
-;; directory. See
-;; http://common-lisp.net/project/asdf/asdf/Configuring-ASDF.html
-;; Download cl-rdfxml from http://www.cs.rpi.edu/~tayloj/CL-RDFXML/
-(push #p"/home/patrick/software/cl-rdfxml/cl-rdfxml_0.9/" asdf:*central-registry*)
-
 (ql:quickload "puri")          ; Working with URIs.
 (ql:quickload "drakma")        ; An HTTP client.
 (ql:quickload "cxml")          ; XML parsing.
